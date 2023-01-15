@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline">
+    <input 
+        matInput 
+        [formControl]="pesquisaFormControl"
+        placeholder="Search"
+    >
+</mat-form-field>
+<button mat-raised-button (click)="onSubmit()" color="primary">Pesquisa</button>
