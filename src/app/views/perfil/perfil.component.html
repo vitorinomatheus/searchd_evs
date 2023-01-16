@@ -1,10 +1,20 @@
-<mat-grid-list cols="4">
+<div style="display: grid; grid-template-rows: fit-content 1fr; height: 100%; padding-left: 112px; padding-right: 112px;">
+    <app-perfil-header></app-perfil-header>
+    <div style="display: grid; grid-template-columns: 1fr 3fr">
+        <app-perfil-informacoes [usuario]="usuario"></app-perfil-informacoes>
+        <app-perfil-repositorios style="justify-self: center;"></app-perfil-repositorios>
+    </div>
+
+</div>
+
+
+<!-- <mat-grid-list cols="4" style="height: 100%;">
     <mat-grid-tile style="background-color: red; height: 100%;" colspan="1">
         <div style="padding: 20px;">
-            <app-perfil-informacoes [usuario]="usuario"></app-perfil-informacoes>
+            
         </div>        
     </mat-grid-tile>
     <mat-grid-tile style="background-color: green; height: 100%;" colspan="3">
-        <app-perfil-repositorios></app-perfil-repositorios>
+        
     </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->

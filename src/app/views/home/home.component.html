@@ -1,8 +1,8 @@
-<mat-form-field appearance="outline">
-    <input 
-        matInput 
-        [formControl]="pesquisaFormControl"
-        placeholder="Search"
-    >
-</mat-form-field>
-<button mat-raised-button (click)="onSearch()" color="primary">Pesquisa</button>
+<div style="display: flex; flex-direction: column; justify-content: center; height: 100%; padding-left: 250px; padding-right: 250px;">
+
+    <app-logo style="text-align: center;"></app-logo>
+
+    <app-barra-pesquisa (pesquisaEmitter)="onSearch($event)"></app-barra-pesquisa>
+
+</div>
+

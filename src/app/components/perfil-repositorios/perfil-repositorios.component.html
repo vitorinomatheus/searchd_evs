@@ -1,16 +1,27 @@
-<mat-list style="background-color: white; max-width: 700px;">
+<div>
+    <mat-list style="background-color: white;">
 
-    <mat-list-item style="height: 150px;" *ngFor="let repo of usuarioRepositorios">
-        <h2>{{ repo.name }}</h2>
-        <p>
-            {{ repo.description }} 
-        </p>
-        <div>
-            <mat-icon>star_outline</mat-icon>
-            <span> {{ repo.stargazers_count }}</span>
-            <span>-</span>
-            <span>Atualizado há {{ repo.updated_at | timeAgo }}</span>
-        </div>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-</mat-list>
+        <mat-list-item style="height: 150px;" *ngFor="let repo of usuarioRepositorios">
+            <h2>{{ repo.name }}</h2>
+            <p>
+                {{ repo.description }} 
+            </p>
+            <div>
+                <mat-icon>star_outline</mat-icon>
+                <span> {{ repo.stargazers_count }}</span>
+                <span>-</span>
+                <span>Atualizado há {{ repo.updated_at | timeAgo }}</span>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+    </mat-list>
+
+    <mat-paginator
+        [hidePageSize]="true"
+        [pageIndex]="pageIndex"
+        [length]="paginatorLength"
+        [pageSize]= "pageSize"
+        (page)="handlePageChange($event)"
+    ></mat-paginator>
+</div>

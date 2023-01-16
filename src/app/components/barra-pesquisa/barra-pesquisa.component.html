@@ -1,0 +1,28 @@
+<div >
+    <form (ngSubmit)="onSearch()">
+
+        <mat-form-field appearance="outline" >
+            <input 
+                matInput 
+                [formControl]="pesquisaFormControl"
+                placeholder="Search"
+                style="width: 100%"
+            />
+            <mat-icon matPrefix> search </mat-icon>
+
+            <mat-error *ngIf="pesquisaFormControl.invalid">
+                {{ getErrorMessage() }}
+            </mat-error>
+
+        </mat-form-field>
+
+        <button mat-raised-button 
+            color="primary"
+            type="submit">
+            Pesquisa
+        </button>
+    </form>
+</div>
+
+
+

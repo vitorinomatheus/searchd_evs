@@ -5,13 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class StoreUsuarioService {
 
-  private usuario: any;
+  private _usuario: any;
 
   setUsuario(usuario: any) {
-    this.usuario = usuario
+    this._usuario = usuario
   }
 
   getUsuario() {
-    return this.usuario;
+    return this._usuario;
   }
 }

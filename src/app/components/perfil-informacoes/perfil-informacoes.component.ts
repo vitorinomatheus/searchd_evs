@@ -10,9 +10,9 @@ export class PerfilInformacoesComponent implements OnInit{
   @Input()
   usuario: any
 
-  private usuarioAvatar: string = '';
+  private _usuarioAvatar: string = '';
 
   ngOnInit() {
-    this.usuarioAvatar = this.usuario.avatar_url;
+    this._usuarioAvatar = this.usuario.avatar_url;
   }
 }

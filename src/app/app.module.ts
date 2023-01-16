@@ -21,6 +21,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgPipesModule } from 'ngx-pipes';
+import { LogoComponent } from './components/logo/logo.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BarraPesquisaComponent } from './components/barra-pesquisa/barra-pesquisa.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { NgPipesModule } from 'ngx-pipes';
     PerfilComponent,
     PerfilHeaderComponent,
     PerfilInformacoesComponent,
-    PerfilRepositoriosComponent
+    PerfilRepositoriosComponent,
+    LogoComponent,
+    BarraPesquisaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,8 @@ import { NgPipesModule } from 'ngx-pipes';
     MatCardModule,
     MatIconModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatPaginatorModule
   ],
   providers: [ 
     GithubService
