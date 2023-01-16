@@ -16,7 +16,7 @@ export class GithubService {
         return this.http.get<Observable<any>>(`${this.apiUrl}/${nome}`);
     }
 
-    getUsuarioRepositorios(nome: string) {
+    getUsuarioRepositorios(nome: string): Observable<any> {
         return this.http.get<Observable<any>>(`${this.apiUrl}/${nome}/repos`);
     }
 }

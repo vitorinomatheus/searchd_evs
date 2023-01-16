@@ -1,1 +1,10 @@
-<p>perfil works!</p>
+<mat-grid-list cols="4">
+    <mat-grid-tile style="background-color: red; height: 100%;" colspan="1">
+        <div style="padding: 20px;">
+            <app-perfil-informacoes [usuario]="usuario"></app-perfil-informacoes>
+        </div>        
+    </mat-grid-tile>
+    <mat-grid-tile style="background-color: green; height: 100%;" colspan="3">
+        <app-perfil-repositorios></app-perfil-repositorios>
+    </mat-grid-tile>
+</mat-grid-list>

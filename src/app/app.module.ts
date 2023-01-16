@@ -12,12 +12,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { PerfilHeaderComponent } from './components/perfil-header/perfil-header.component';
+import { PerfilInformacoesComponent } from './components/perfil-informacoes/perfil-informacoes.component';
+import { PerfilRepositoriosComponent } from './components/perfil-repositorios/perfil-repositorios.component';
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatCardModule } from "@angular/material/card";
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { NgPipesModule } from 'ngx-pipes';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PerfilComponent
+    PerfilComponent,
+    PerfilHeaderComponent,
+    PerfilInformacoesComponent,
+    PerfilRepositoriosComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +39,16 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     ReactiveFormsModule,
 
+    NgPipesModule,
+
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule,
+    MatCardModule,
+    MatIconModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [ 
     GithubService

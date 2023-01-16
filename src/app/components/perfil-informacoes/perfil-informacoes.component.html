@@ -1,0 +1,54 @@
+<mat-card style="padding-top: 24px; padding-bottom: 24px; padding-left: 16px; padding-right: 16px;">
+
+    <mat-card-header>
+        <img mat-card-avatar [src]="usuario.avatar_url">
+        <mat-card-title>{{ usuario.name }}</mat-card-title>
+        <mat-card-subtitle>@{{ usuario.login }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content >
+        <p>
+            {{ usuario.bio }}
+        </p>
+    </mat-card-content>
+
+    <mat-card-content style="display: flex; flex-direction: column; margin-bottom: 30px;">
+        <div>
+            <mat-icon>people_outline</mat-icon>
+            <span>{{ usuario.followers }} seguidores</span>
+        </div>
+
+        <div>
+            <mat-icon>favorite_outline</mat-icon>
+            <span>{{ usuario.following }} seguindo</span>
+        </div>
+        
+    </mat-card-content>
+
+    <mat-card-content style="display: flex; flex-direction: column;">
+        <div *ngIf="usuario.company">
+            <mat-icon>corporate_fare</mat-icon>
+            <span>{{ usuario.company }}</span>
+        </div>
+
+        <div *ngIf="usuario.location">
+            <mat-icon>pin_drop</mat-icon>
+            <span>{{ usuario.location }}</span>
+        </div>
+
+        <div *ngIf="usuario.email">
+            <mat-icon>mail_outline</mat-icon>
+            <span>{{ usuario.email }}</span>
+        </div>
+
+        <div *ngIf="usuario.blog">
+            <mat-icon>link</mat-icon>
+            <span> {{ usuario.blog }} </span>
+        </div>
+
+        <div *ngIf="usuario.twitter_username">
+            <mat-icon>people</mat-icon>
+            <span>{{ usuario.twitter_username }}</span>
+        </div>
+    </mat-card-content>
+</mat-card>
