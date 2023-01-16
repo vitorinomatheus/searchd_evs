@@ -21,9 +21,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgPipesModule } from 'ngx-pipes';
-import { LogoComponent } from './components/logo/logo.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { BarraPesquisaComponent } from './components/barra-pesquisa/barra-pesquisa.component'
+import { BarraPesquisaComponent } from './components/barra-pesquisa/barra-pesquisa.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PerfilContatoComponent } from './components/perfil-contato/perfil-contato.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,8 @@ import { BarraPesquisaComponent } from './components/barra-pesquisa/barra-pesqui
     PerfilHeaderComponent,
     PerfilInformacoesComponent,
     PerfilRepositoriosComponent,
-    LogoComponent,
-    BarraPesquisaComponent
+    BarraPesquisaComponent,
+    PerfilContatoComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +55,8 @@ import { BarraPesquisaComponent } from './components/barra-pesquisa/barra-pesqui
     MatIconModule,
     MatListModule,
     MatDividerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [ 
     GithubService

@@ -3,54 +3,61 @@ import { StoreUsuarioService } from './../../services/store-usuario.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 
-export interface GetRepositorios {
-  nome: string,
-  page: number;
-}
-
 @Component({
   selector: 'app-perfil-repositorios',
   templateUrl: './perfil-repositorios.component.html',
   styleUrls: ['./perfil-repositorios.component.css']
 })
-export class PerfilRepositoriosComponent implements OnInit{
-  
+export class PerfilRepositoriosComponent implements OnInit {
+ 
   @Input()
-  usuario: any
+  usuarioChange: any
+
+  usuario: any;
 
   public usuarioRepositorios: Array<any> = [];
+  public repositoriosPaginados: Array<any> = [];
   public pageIndex: number = 0;
   public paginatorLength?: number;
   public pageSize: number = 4;
+  public pageNumber: number = 1;
 
   constructor( 
     private storeUsuarioService: StoreUsuarioService,
     private githubService: GithubService) {}
 
   ngOnInit(): void {
-    this.usuario = this.storeUsuarioService.getUsuario();
+
+    this.storeUsuarioService.usuarioSubject.subscribe(usuario => {
+      this.usuario = usuario;
+      this.getRepos(usuario.login);
+    })
+    
+  }
+
+  getRepos(usuarioLogin: string): void {
 
     this.paginatorLength = this.usuario.public_repos;
 
-    const getRepositorios: GetRepositorios = {
-      nome: this.usuario.login,
-      page: 1
-    }
-
-    this.githubService.getUsuarioRepositorios(getRepositorios).subscribe(repos => {
+    this.githubService.getUsuarioRepositorios(usuarioLogin).subscribe(repos => {
+      
+      repos.sort((a: any, b: any) => {
+        return b.stargazers_count - a.stargazers_count;
+      });
+      
       this.usuarioRepositorios = repos;
+      this.repositoriosPaginados = this.usuarioRepositorios.slice((this.pageNumber - 1), this.pageSize);
     })
   }
 
   handlePageChange(pageEvent: PageEvent): void {
 
-    let getRepositorios: GetRepositorios = {
-        nome: this.usuario.login,
-        page: pageEvent.pageIndex++
-      }
+    this.repositoriosPaginados = this.usuarioRepositorios.slice(pageEvent.pageIndex * pageEvent.pageSize, 
+      pageEvent.pageSize * (pageEvent.pageIndex + 1))  
+  }
 
-    this.githubService.getUsuarioRepositorios(getRepositorios).subscribe(repos => {
-      this.usuarioRepositorios = repos;
-    })
+  goToRepoUrl(url: string): void {
+    console.log(url)
+    window.open(url, '_blank')
   }
 }

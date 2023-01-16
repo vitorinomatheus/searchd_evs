@@ -1,54 +1,62 @@
-<mat-card style="padding-top: 24px; padding-bottom: 24px; padding-left: 16px; padding-right: 16px;">
+<mat-card class="container-card">
 
-    <mat-card-header>
+    <mat-card-header style="margin-bottom: 1rem;">
         <img mat-card-avatar [src]="usuario.avatar_url">
         <mat-card-title>{{ usuario.name }}</mat-card-title>
         <mat-card-subtitle>@{{ usuario.login }}</mat-card-subtitle>
     </mat-card-header>
 
-    <mat-card-content >
+    <mat-card-content style="margin-bottom: 1rem;">
         <p>
             {{ usuario.bio }}
         </p>
     </mat-card-content>
 
-    <mat-card-content style="display: flex; flex-direction: column; margin-bottom: 30px;">
-        <div>
+    <mat-card-content class="top-content">
+        <div class="info">
             <mat-icon>people_outline</mat-icon>
             <span>{{ usuario.followers }} seguidores</span>
         </div>
 
-        <div>
+        <div class="info-no-border">
             <mat-icon>favorite_outline</mat-icon>
             <span>{{ usuario.following }} seguindo</span>
         </div>
         
     </mat-card-content>
 
-    <mat-card-content style="display: flex; flex-direction: column;">
-        <div *ngIf="usuario.company">
+    <mat-card-content style="display: flex; flex-direction: column">
+        <div *ngIf="usuario.company" class="info">
             <mat-icon>corporate_fare</mat-icon>
             <span>{{ usuario.company }}</span>
         </div>
 
-        <div *ngIf="usuario.location">
+        <div *ngIf="usuario.location" class="info">
             <mat-icon>pin_drop</mat-icon>
             <span>{{ usuario.location }}</span>
         </div>
 
-        <div *ngIf="usuario.email">
+        <div *ngIf="usuario.email" class="info">
             <mat-icon>mail_outline</mat-icon>
             <span>{{ usuario.email }}</span>
         </div>
 
-        <div *ngIf="usuario.blog">
+        <div *ngIf="usuario.blog" class="info">
             <mat-icon>link</mat-icon>
             <span> {{ usuario.blog }} </span>
         </div>
 
-        <div *ngIf="usuario.twitter_username">
-            <mat-icon>people</mat-icon>
+        <div *ngIf="usuario.twitter_username" class="info-no-border">
+            <img src="../../../assets/twitter-icon.png" alt="">
             <span>{{ usuario.twitter_username }}</span>
         </div>
     </mat-card-content>
 </mat-card>
+
+<button mat-raised-button 
+    color="primary"
+    style="width: 100%;"
+    (click)="openDialog()"
+>
+    Contato
+</button>

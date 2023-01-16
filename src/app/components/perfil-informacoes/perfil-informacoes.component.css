@@ -1,0 +1,26 @@
+.container-card {
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+    padding-left: 16px; 
+    padding-right: 16px; 
+    margin-bottom: 1rem;
+}
+
+.info {
+    display: flex; 
+    align-items: center; 
+    gap: 0.3rem; 
+    margin-bottom: 0.5rem;
+}
+
+.info-no-border {
+    display: flex; 
+    align-items: center; 
+    gap: 0.3rem; 
+}
+
+.top-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}

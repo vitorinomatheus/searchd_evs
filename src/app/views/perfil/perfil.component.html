@@ -1,20 +1,8 @@
-<div style="display: grid; grid-template-rows: fit-content 1fr; height: 100%; padding-left: 112px; padding-right: 112px;">
-    <app-perfil-header></app-perfil-header>
-    <div style="display: grid; grid-template-columns: 1fr 3fr">
+<div class="perfil-container">
+    <app-perfil-header (pesquisaEmitter)="displayUsuario()"></app-perfil-header>
+
+    <div class="perfil-bottom-container">
         <app-perfil-informacoes [usuario]="usuario"></app-perfil-informacoes>
-        <app-perfil-repositorios style="justify-self: center;"></app-perfil-repositorios>
+        <app-perfil-repositorios style="justify-self: center; padding-left: 3rem"></app-perfil-repositorios>
     </div>
-
 </div>
-
-
-<!-- <mat-grid-list cols="4" style="height: 100%;">
-    <mat-grid-tile style="background-color: red; height: 100%;" colspan="1">
-        <div style="padding: 20px;">
-            
-        </div>        
-    </mat-grid-tile>
-    <mat-grid-tile style="background-color: green; height: 100%;" colspan="3">
-        
-    </mat-grid-tile>
-</mat-grid-list> -->

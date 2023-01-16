@@ -1,0 +1,32 @@
+.form-home {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+}
+
+.form-header {
+    display: flex; 
+    align-items: center; 
+    width: 100%;
+}
+
+.barraContainer {    
+    display: flex;
+}
+
+.form-field-container {
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+}
+
+.form-field-container-header {
+    display: flex; 
+}
+
+.button {
+    height: 3.4rem; 
+    padding-left: 3rem; 
+    padding-right: 3rem;
+}

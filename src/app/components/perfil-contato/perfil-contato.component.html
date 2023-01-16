@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Informações de contato</h1>
+
+<div mat-dialog-content *ngIf="!(usuario.email || usuario.blog || usuario.twitter_username); else contato">
+    <p>O usuário não forneceu nenhum meio de contato</p>
+</div>
+
+<ng-template #contato>
+    <div mat-dialog-content *ngIf="usuario.email">
+        <div>
+            <p class="info-title">E-mail</p>
+            <span>{{ usuario.email }}</span>
+        </div>
+    </div>
+    
+    <div mat-dialog-content *ngIf="usuario.blog">
+        <div>
+            <p class="info-title">Website</p>
+            <span (click)="goToRoute('blog')" style="cursor: pointer;"> {{ usuario.blog }} </span>
+        </div>
+    </div>
+    
+    <div mat-dialog-content *ngIf="usuario.twitter_username" >
+        <div>
+            <p class="info-title">Twitter</p>
+            <span (click)="goToRoute('twitter')" style="cursor: pointer;">@{{ usuario.twitter_username }}</span>
+        </div>
+    </div>
+</ng-template>
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Fechar</button>
+</div>

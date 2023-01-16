@@ -1,7 +1,8 @@
-<span class="logo">Search <span style="color: #8C19D2;">d_evs</span></span>
-<mat-form-field appearance="outline">
-    <input 
-        matInput 
-        placeholder="Search"
-    >
-</mat-form-field>
+<div style="display: flex; align-items: center; background-color: white;padding-left: 100px; padding-right: 100px;">
+    <span class="logo" routerLink="/">Search <span style="color: #8C19D2;">d_evs</span></span>
+    <app-barra-pesquisa 
+        [isHeader]="true" 
+        style="width: 100%; margin-top: 1rem;"
+        (pesquisaEmitter)="onSearch($event)"
+    ></app-barra-pesquisa>
+</div>

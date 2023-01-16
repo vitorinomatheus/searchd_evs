@@ -1,8 +1,4 @@
-<div style="display: flex; flex-direction: column; justify-content: center; height: 100%; padding-left: 250px; padding-right: 250px;">
-
-    <app-logo style="text-align: center;"></app-logo>
-
-    <app-barra-pesquisa (pesquisaEmitter)="onSearch($event)"></app-barra-pesquisa>
-
+<div class="container">    
+    <span class="logo">Search <span id="devs">d_evs</span></span>
+    <app-barra-pesquisa (pesquisaEmitter)="onSearch($event)" style="width: 100%;"></app-barra-pesquisa>  
 </div>
-

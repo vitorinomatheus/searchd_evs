@@ -2,4 +2,6 @@
     font-family: 'Nunito';
     color: #0069CA;
     font-size: 32px;
+    cursor: pointer;
+    width: 25%;
 }

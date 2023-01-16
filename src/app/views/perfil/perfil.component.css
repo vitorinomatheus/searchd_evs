@@ -1,3 +1,20 @@
 .mat-grid-tile-content {
     height: fit-content;
 }
+
+.perfil-container {
+    background-color: rgb(247, 247, 247);
+    display: grid; 
+    grid-template-rows: fit-content 1fr; 
+    height: 100%; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.perfil-bottom-container {
+    display: grid; 
+    grid-template-columns: 1fr 3fr; 
+    padding-left: 112px; 
+    padding-right: 112px; 
+    margin-top: 2rem;
+}
