@@ -11,7 +11,7 @@
                 <mat-icon>star_outline</mat-icon>
                 <span style="margin-right: 0.3rem;"> {{ repo.stargazers_count }} </span>
                 <span style="margin-right: 0.3rem;"> - </span>
-                <span>Atualizado há {{ repo.updated_at | timeAgo }}</span>
+                <span>Atualizado em {{ repo.updated_at | date }}</span>
             </div>
 
             <mat-divider matListItemLine style="margin-top: 1.2rem;"></mat-divider>
